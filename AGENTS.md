@@ -28,6 +28,9 @@ El dinero son centavos enteros. La existencia no baja de cero. `npm run check` e
 | Ruta | Para qué |
 | --- | --- |
 | `src/domain` | Producto, inventario, formatos y la existencia que no queda negativa |
+| `src/catalogo` | Alta de producto (parte A) |
+| `src/compras` | Compra en borrador, recepción y costo promedio (parte A) |
+| `src/kardex` | Movimientos de stock por producto (parte A) |
 | `src/ventas` | Contado, crédito y anulación |
 | `src/cartera` | Abono y cobranza vencida |
 | `src/caja` | Cierre del día |
