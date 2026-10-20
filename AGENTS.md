@@ -2,52 +2,41 @@
 
 > Las reglas que no se negocian están en [INVARIANTS.md](INVARIANTS.md). Léelo antes de editar.
 
-## Resumen del repositorio
+## Resumen
 
-Este repositorio es el lugar compartido de dos personas. El producto todavía no está definido: el alcance vive en [docs/product/ALCANCE.md](docs/product/ALCANCE.md) y, mientras diga `PRODUCTO: pendiente`, no se agrega código en `src/`.
+Mostrador es el mini ERP de una comercializadora con un solo almacén. Dos personas comparten este repositorio. La parte A (compañera) cierra inventario. La parte B cierra ventas, cartera y caja. El ciclo, los estados y los formatos están en [docs/sdd](docs/sdd/README.md).
 
-El arnés son las guías de este archivo, los sensores de `scripts/sensores/` y la puerta `npm run check`. GitHub es el remoto. La rama troncal es `main`.
+El dinero son centavos enteros. La existencia no baja de cero. `npm run check` es la puerta antes de cada pull request.
 
-## Cómo colaboran las dos personas
+## Reparto
 
-Cada persona dirige una tarea. Su agente crea la rama, implementa, corre el check, hace push y abre el pull request. Nadie comparte la rama del otro.
-
-1. Actualizar `main`.
-2. Escribir la tarea: qué hay que lograr y cómo se sabe que está hecho. Si es grande, el plan va en `docs/exec-plans/active/`.
-3. Rama `tipo/asunto-corto`, por ejemplo `docs/alcance-producto`.
-4. `npm run check` en cero.
-5. Push y pull request hacia `main`.
-6. Merge cuando el check de GitHub pasa y la otra persona, si el cambio lo pide, dejó su revisión.
-
-Un acuerdo que solo está en el chat se copia al repositorio en un commit. Si no, el agente de la otra persona no lo ve.
+- Parte A: `feature/catalogo`, `feature/compras`, `feature/kardex`. Spec en [docs/sdd/parte-a-inventario.md](docs/sdd/parte-a-inventario.md).
+- Parte B: `feature/ventas`, `feature/cartera`, `feature/caja`. Spec en [docs/sdd/parte-b-ventas.md](docs/sdd/parte-b-ventas.md).
+- El esqueleto compartido se revisa entre las dos. Inventario se mergea antes de apoyar ventas en ese `main`.
 
 ## Autorización del agente
 
-- Puede editar código, pruebas y documentación, y puede ejecutar los objetivos de `npm run help`.
+- Puede editar código, pruebas y documentación, y puede ejecutar `npm run help`.
 - Puede dar por bueno un cambio solo cuando `npm run check` termina en cero.
 - No hace commit, push ni merge salvo que la persona lo pida en el mensaje.
-- No modifica [INVARIANTS.md](INVARIANTS.md) ni da por definido el producto sin que las dos personas lo acuerden en `docs/product/ALCANCE.md`.
-- No crea recursos en AWS ni escribe claves de acceso en el repositorio.
+- No modifica [INVARIANTS.md](INVARIANTS.md) ni la parte de la otra persona para adelantar la propia.
+- No crea recursos en AWS ni escribe claves en el repositorio.
 - Si una regla de este archivo choca con un invariante, manda el invariante.
 
 ## Mapa
 
 | Ruta | Para qué |
 | --- | --- |
-| [INVARIANTS.md](INVARIANTS.md) | Reglas con la forma en que se aplican |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Ramas, commits y pull requests |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Capas, cuando el producto exista |
-| [docs/DECISIONS.md](docs/DECISIONS.md) | Decisiones ya tomadas |
-| [docs/product/ALCANCE.md](docs/product/ALCANCE.md) | Qué se va a construir |
-| [docs/infra/EC2.md](docs/infra/EC2.md) | Dónde correrá, cuando toque |
-| `.agents/skills/revisar-cambio/SKILL.md` | Cómo revisar un diff |
+| `src/domain` | Producto, inventario, formatos y la existencia que no queda negativa |
+| `src/ventas` | Contado, crédito y anulación |
+| `src/cartera` | Abono y cobranza vencida |
+| `src/caja` | Cierre del día |
+| `src/mostrador.ts` | Fachada que usan las pruebas |
 
 ## Comandos
-
-La superficie permitida es `npm run help`. La puerta que debe quedar en verde es:
 
 ```text
 npm run check
 ```
 
-`check` corre, en este orden: lint, secretos, invariantes, producto y pruebas. Si un paso falla, la salida de esa herramienta es el diagnóstico.
+`check` corre lint, tipos, secretos, invariantes, la marca de producto, dinero y pruebas. Si un paso falla, la salida de esa herramienta es el diagnóstico.

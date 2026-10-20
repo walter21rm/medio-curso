@@ -2,12 +2,28 @@
 
 Estas reglas no se negocian dentro de un cambio normal. Modificar este archivo exige revisión humana de las dos personas.
 
-## Repositorio
+## Reparto
 
-- Hay un solo remoto y una sola rama troncal, `main`. Cada persona trabaja en su propia rama. *Aplicado por: `revisión humana`*
-- Un cambio de producto entra por pull request. La persona define la tarea y el criterio de aceptación; el agente implementa, corre `npm run check`, hace push y abre el PR. *Aplicado por: `revisión humana`*
+- Hay un solo remoto y una sola rama troncal, `main`. La parte A cierra inventario y la parte B cierra ventas, cartera y caja. *Aplicado por: `revisión humana`*
+- Un cambio entra por pull request y cubre una sola regla del brief, con el test que la demuestra. *Aplicado por: `revisión humana`*
 - Una decisión que no está en el repositorio no existe para el agente de la otra persona. *Aplicado por: `revisión humana`*
-- El producto sigue pendiente hasta que `docs/product/ALCANCE.md` deje de decir `PRODUCTO: pendiente`. Mientras tanto no hay código en `src/`. *Aplicado por: `npm run sensor:producto`*
+
+## Stock y dinero
+
+- La existencia no queda negativa. *Aplicado por: `npm run test`*
+- En `src/` no hay literales decimales, `parseFloat` ni `toFixed`. El dinero va en centavos enteros. *Aplicado por: `npm run sensor:dinero`*
+- No se vende más de lo que hay. *Aplicado por: `npm run test`*
+- Una venta al contado baja el stock y entra el total a caja. *Aplicado por: `aún no aplicado`*
+- Una venta a crédito baja el stock y abre una cuenta por cobrar con vencimiento. *Aplicado por: `aún no aplicado`*
+- Anular una venta devuelve el stock. Si era a crédito, cancela la deuda. Si era al contado, revierte el ingreso de caja. *Aplicado por: `aún no aplicado`*
+- Un abono baja el saldo y entra a caja. No supera el saldo. *Aplicado por: `aún no aplicado`*
+- La lista de cobranza muestra solo cuentas abiertas con vencimiento anterior al día consultado. *Aplicado por: `aún no aplicado`*
+- El cierre guarda la diferencia entre el efectivo contado y las ventas de contado más los abonos, menos los reversos de ese día. *Aplicado por: `aún no aplicado`*
+
+## Parte A, todavía sin su pull request
+
+- El costo promedio se recalcula al recibir una compra, con el redondeo descrito en `docs/sdd/parte-a-inventario.md`. *Aplicado por: `aún no aplicado`*
+- Una compra en borrador no sube el stock. Solo la recepción lo sube. *Aplicado por: `aún no aplicado`*
 
 ## Seguridad
 
@@ -18,6 +34,7 @@ Estas reglas no se negocian dentro de un cambio normal. Modificar este archivo e
 ## Calidad
 
 - `npm run check` termina en cero antes de abrir o actualizar un pull request. *Aplicado por: `revisión humana`*
+- El TypeScript estricto pasa. *Aplicado por: `npm run typecheck`*
 - Cada viñeta de este archivo declara un aplicador, y cada `npm run` citado existe en el arnés. *Aplicado por: `npm run sensor:invariantes`*
-- `package.json` no define `install`, `preinstall` ni `postinstall`. Esos nombres los dispara npm al instalar y reentrarían en el arnés. *Aplicado por: `npm run sensor:invariantes`*
-- La aplicación en EC2 y la cuenta AWS se crean cuando el producto deje de estar pendiente. *Aplicado por: `aún no aplicado`*
+- `package.json` no define `install`, `preinstall` ni `postinstall`. *Aplicado por: `npm run sensor:invariantes`*
+- La aplicación en EC2 se crea cuando el mostrador tenga el ciclo completo en `main`. *Aplicado por: `aún no aplicado`*

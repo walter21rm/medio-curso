@@ -3,18 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Repositorio compartido del medio curso. El producto se define después.",
+  "description": "Mostrador, mini ERP de una comercializadora. Dos personas, un repositorio.",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
     "help": "node scripts/arnes.mjs help",
     "lint": "node scripts/arnes.mjs lint",
+    "typecheck": "node scripts/arnes.mjs typecheck",
     "test": "node scripts/arnes.mjs test",
     "sensor:secretos": "node scripts/arnes.mjs sensor:secretos",
     "sensor:invariantes": "node scripts/arnes.mjs sensor:invariantes",
     "sensor:producto": "node scripts/arnes.mjs sensor:producto",
+    "sensor:dinero": "node scripts/arnes.mjs sensor:dinero",
     "check": "node scripts/arnes.mjs check",
     "clean": "node scripts/arnes.mjs clean"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "typescript": "^5.8.3"
   }
 }
