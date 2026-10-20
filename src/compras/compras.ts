@@ -74,6 +74,10 @@ export class Compras {
     return copiar(this.exigir(id));
   }
 
+  listar(): Compra[] {
+    return [...this.compras.values()].map(copiar);
+  }
+
   private exigir(id: string): Compra {
     const compra = this.compras.get(exigirId(id));
     if (compra === undefined) {

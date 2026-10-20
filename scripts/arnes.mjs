@@ -51,7 +51,7 @@ export const objetivos = {
         "Uso: npm run <objetivo>",
         "",
         "  help                  Muestra estos objetivos",
-        "  lint                  Revisa la sintaxis de los .mjs",
+        "  lint                  Revisa la sintaxis de los .mjs (scripts, tests y web)",
         "  typecheck             tsc --noEmit",
         "  test                  Pruebas del arnés y de Mostrador",
         "  sensor:secretos       No hay credenciales en el árbol",
@@ -59,6 +59,7 @@ export const objetivos = {
         "  sensor:producto       Sin src/ mientras el producto siga pendiente",
         "  sensor:dinero         En src/ no hay decimales, parseFloat ni toFixed",
         "  check                 Corre lint, tipos, sensores y pruebas",
+        "  start                 Levanta el servidor y el front (PORT, MOSTRADOR_SEMILLA)",
         "  clean                 Borra salidas de cobertura",
         "",
       ].join("\n"),
@@ -70,6 +71,7 @@ export const objetivos = {
     const archivos = [
       ...archivosMjs(join(raiz, "scripts")),
       ...archivosMjs(join(raiz, "tests")),
+      ...archivosMjs(join(raiz, "web")),
     ];
     for (const archivo of archivos) {
       const estado = ejecutar(["--check", archivo]);
@@ -133,6 +135,10 @@ export const objetivos = {
     }
     process.stdout.write("check ok\n");
     return 0;
+  },
+
+  start() {
+    return ejecutar([...banderaTipos, "--disable-warning=ExperimentalWarning", "src/servidor/main.ts"]);
   },
 
   clean() {
