@@ -11,4 +11,4 @@ Está listo cuando una compra recibida actualiza stock y costo promedio, una ven
 | A Inventario | La compañera | `feature/catalogo`, `feature/compras`, `feature/kardex` | Productos, recepción, costo promedio y kardex |
 | B Ventas | Esta parte | `feature/ventas`, `feature/cartera`, `feature/caja` | Contado, crédito, anulación, abonos, cobranza y cierre |
 
-Las specs están en [docs/sdd](../sdd/README.md). El esqueleto compartido se revisa entre las dos antes de mergear. Inventario entra primero a `main`.
+Las specs están en [docs/sdd](../sdd/README.md). Inventario y ventas ya están en `main`. El frontend lo sube la parte A. Una sola persona despliega después la instancia EC2.

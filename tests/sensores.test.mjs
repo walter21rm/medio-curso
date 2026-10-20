@@ -37,7 +37,7 @@ describe("invariantes", () => {
 });
 
 describe("producto", () => {
-  it("mientras el alcance siga pendiente, src/ no entra", () => {
+  it("el alcance describe Mostrador", () => {
     const resultado = revisarProducto(process.cwd());
     assert.equal(resultado.ok, true);
   });

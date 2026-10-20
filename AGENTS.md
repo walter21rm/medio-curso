@@ -12,7 +12,7 @@ El dinero son centavos enteros. La existencia no baja de cero. `npm run check` e
 
 - Parte A: `feature/catalogo`, `feature/compras`, `feature/kardex`. Spec en [docs/sdd/parte-a-inventario.md](docs/sdd/parte-a-inventario.md).
 - Parte B: `feature/ventas`, `feature/cartera`, `feature/caja`. Spec en [docs/sdd/parte-b-ventas.md](docs/sdd/parte-b-ventas.md).
-- El esqueleto compartido se revisa entre las dos. Inventario se mergea antes de apoyar ventas en ese `main`.
+- Inventario y ventas ya están en `main`. El frontend lo sube la parte A. Una sola persona despliega la instancia EC2.
 
 ## Autorización del agente
 

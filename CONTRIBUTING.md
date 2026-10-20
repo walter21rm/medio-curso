@@ -29,4 +29,4 @@ npm run check
 | --- | --- |
 | Revisar un diff | `.agents/skills/revisar-cambio/SKILL.md` |
 | Saber si ya hay producto | `docs/product/ALCANCE.md` |
-| Ver por qué todavía no hay EC2 | `docs/DECISIONS.md` |
+| Ver cómo se despliega en EC2 | `docs/infra/EC2.md` |
