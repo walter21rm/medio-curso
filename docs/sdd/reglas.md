@@ -37,4 +37,4 @@ Cada pull request hace una sola regla y trae el test que la demuestra. Un pull r
 
 Quien toma inventario mergea catálogo, compras y kardex primero. Quien toma ventas parte de ese `main`. Si las dos tocan el stock en la misma semana, entra primero el pull request que ya tiene el test «la existencia no queda negativa».
 
-Ese orden ya está en `main`: inventario y ventas. Lo que sigue es el frontend de la parte A y, después, una sola instancia EC2.
+Ese orden ya está en `main`, con el frontend. Mostrador corre en una sola instancia EC2.

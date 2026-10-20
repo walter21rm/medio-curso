@@ -30,4 +30,4 @@ npm install
 npm run check
 ```
 
-El ciclo de inventario y ventas ya está en `main`. El frontend lo sube la parte A. Una sola persona despliega después la instancia EC2. El detalle está en [docs/infra/EC2.md](docs/infra/EC2.md).
+El ciclo y el frontend ya están en `main`. Mostrador corre en http://15.228.243.126. El detalle está en [docs/infra/EC2.md](docs/infra/EC2.md).

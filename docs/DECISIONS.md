@@ -18,4 +18,4 @@ El día es el prefijo `YYYY-MM-DD` del instante ISO-8601 UTC. Hay un cierre por 
 
 ## ADR-005 Una sola instancia EC2
 
-Mostrador corre en una instancia EC2. El ciclo ya está en `main` y el frontend entra antes del despliegue. Una sola persona crea la instancia y la actualiza. La otra revisa el pull request de infraestructura y usa la misma dirección. Las claves de acceso no entran al repositorio.
+Mostrador corre en la instancia `i-0afdec2735297025e` de `sa-east-1`. Una sola persona la creó y la actualiza. La otra usa la dirección de `docs/infra/EC2.md` y no crea una segunda instancia. Las claves de acceso no entran al repositorio.

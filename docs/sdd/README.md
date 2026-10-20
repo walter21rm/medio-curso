@@ -9,4 +9,4 @@ Fuente de verdad del brief `Mostrador Mini ERP`. Si una decisión no está en es
 | [parte-a-inventario.md](parte-a-inventario.md) | Lo que cierra la compañera |
 | [parte-b-ventas.md](parte-b-ventas.md) | Lo que cierra esta parte: ventas, cartera y caja |
 
-El esqueleto, el inventario y las ventas ya están en `main`. El frontend lo sube la parte A. El despliegue en EC2 lo hace una sola persona.
+El esqueleto, el inventario, las ventas y el frontend ya están en `main`. El despliegue es una sola instancia EC2.

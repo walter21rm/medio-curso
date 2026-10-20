@@ -49,4 +49,4 @@ Lo cierra la parte A en `src/catalogo`, `src/compras` y `src/kardex`. La parte B
 - El TypeScript estricto pasa. *Aplicado por: `npm run typecheck`*
 - Cada viñeta de este archivo declara un aplicador, y cada `npm run` citado existe en el arnés. *Aplicado por: `npm run sensor:invariantes`*
 - `package.json` no define `install`, `preinstall` ni `postinstall`. *Aplicado por: `npm run sensor:invariantes`*
-- La aplicación en EC2 se crea cuando el mostrador tenga el ciclo completo en `main`. *Aplicado por: `aún no aplicado`*
+- Mostrador corre en la instancia `i-0afdec2735297025e`, región `sa-east-1`, en el puerto 80. La dirección está en `docs/infra/EC2.md`. *Aplicado por: `revisión humana`*

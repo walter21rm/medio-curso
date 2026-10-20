@@ -1,6 +1,6 @@
 # Arquitectura
 
-Mostrador guarda el ciclo en memoria. El dominio no hace I/O; un servidor HTTP de Node lo envuelve y sirve el front. No hay base de datos en este corte: al reiniciar el servidor, el estado vuelve a los datos de ejemplo. EC2 espera a que el ciclo esté en `main`.
+Mostrador guarda el ciclo en memoria. El dominio no hace I/O; un servidor HTTP de Node lo envuelve y sirve el front. No hay base de datos en este corte: al reiniciar el servidor, el estado vuelve a los datos de ejemplo. La instancia EC2 ya está descrita en `docs/infra/EC2.md`.
 
 ```mermaid
 flowchart LR
