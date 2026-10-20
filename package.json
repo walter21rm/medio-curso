@@ -17,6 +17,7 @@
     "sensor:producto": "node scripts/arnes.mjs sensor:producto",
     "sensor:dinero": "node scripts/arnes.mjs sensor:dinero",
     "check": "node scripts/arnes.mjs check",
+    "start": "node scripts/arnes.mjs start",
     "clean": "node scripts/arnes.mjs clean"
   },
   "devDependencies": {

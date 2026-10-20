@@ -35,11 +35,16 @@ El dinero son centavos enteros. La existencia no baja de cero. `npm run check` e
 | `src/cartera` | Abono y cobranza vencida |
 | `src/caja` | Cierre del día |
 | `src/mostrador.ts` | Fachada que usan las pruebas |
+| `src/servidor` | HTTP sobre el dominio y datos de ejemplo; sin reglas propias |
+| `web` | Front sin dependencias: `app.mjs`, `api.mjs`, `formato.mjs`, `estilos.css` |
 
 ## Comandos
 
 ```text
 npm run check
+npm start
 ```
+
+`npm start` levanta el servidor y el front en `http://localhost:3000`.
 
 `check` corre lint, tipos, secretos, invariantes, la marca de producto, dinero y pruebas. Si un paso falla, la salida de esa herramienta es el diagnóstico.

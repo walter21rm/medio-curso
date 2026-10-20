@@ -31,6 +31,12 @@ Lo cierra la parte A en `src/catalogo`, `src/compras` y `src/kardex`. La parte B
 - Cada entrada y cada salida de stock queda en el kardex, en orden. *Aplicado por: `npm run test`*
 - `src/catalogo`, `src/compras` y `src/kardex` no hacen I/O. La capa que corra en EC2 los envuelve sin cambiarlos. *Aplicado por: `revisión humana`*
 
+## Servidor y front
+
+- El servidor no tiene reglas de negocio: traduce HTTP al dominio, y una `ReglaNegocio` sale como 422 con su código. *Aplicado por: `npm run test`*
+- El ciclo completo (compra recibida, venta a crédito, abono y cierre) funciona de punta a punta por la API. *Aplicado por: `npm run test`*
+- El front muestra los montos en soles y los envía en centavos enteros, sin pasar por decimales. *Aplicado por: `revisión humana`*
+
 ## Seguridad
 
 - El árbol no contiene credenciales, claves AWS ni tokens. *Aplicado por: `npm run sensor:secretos`*

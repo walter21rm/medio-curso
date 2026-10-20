@@ -22,6 +22,10 @@ export class Inventario {
     return { ...producto };
   }
 
+  listar(): Producto[] {
+    return [...this.productos.values()].map((producto) => ({ ...producto }));
+  }
+
   actualizarCostoPromedio(productoId: string, costoPromedio: number): void {
     const producto = this.exigir(productoId);
     producto.costoPromedio = Dinero.desdeCentavos(costoPromedio).centavos;
