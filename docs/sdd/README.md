@@ -9,4 +9,4 @@ Fuente de verdad del brief `Mostrador Mini ERP`. Si una decisión no está en es
 | [parte-a-inventario.md](parte-a-inventario.md) | Lo que cierra la compañera |
 | [parte-b-ventas.md](parte-b-ventas.md) | Lo que cierra esta parte: ventas, cartera y caja |
 
-El primer pull request es el esqueleto compartido. Las dos lo revisan antes de mergear. Inventario entra a `main` antes de que ventas se apoye en ese `main`.
+El esqueleto, el inventario y las ventas ya están en `main`. El frontend lo sube la parte A. El despliegue en EC2 lo hace una sola persona.

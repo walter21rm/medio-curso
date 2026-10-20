@@ -30,4 +30,4 @@ npm install
 npm run check
 ```
 
-La aplicación correrá en AWS, en una instancia EC2, cuando el ciclo esté en `main`. El detalle está en [docs/infra/EC2.md](docs/infra/EC2.md).
+El ciclo de inventario y ventas ya está en `main`. El frontend lo sube la parte A. Una sola persona despliega después la instancia EC2. El detalle está en [docs/infra/EC2.md](docs/infra/EC2.md).

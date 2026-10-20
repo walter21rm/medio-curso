@@ -16,6 +16,6 @@ El brief pide devolver el stock y, si la venta era a crédito, cancelar la deuda
 
 El día es el prefijo `YYYY-MM-DD` del instante ISO-8601 UTC. Hay un cierre por fecha. Con el día cerrado no entran ventas, anulaciones ni abonos de esa fecha.
 
-## ADR-005 AWS con EC2, todavía sin recursos
+## ADR-005 Una sola instancia EC2
 
-La aplicación correrá en una instancia EC2. No se crea la instancia en este cambio. Las claves de acceso no entran al repositorio.
+Mostrador corre en una instancia EC2. El ciclo ya está en `main` y el frontend entra antes del despliegue. Una sola persona crea la instancia y la actualiza. La otra revisa el pull request de infraestructura y usa la misma dirección. Las claves de acceso no entran al repositorio.

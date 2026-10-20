@@ -56,7 +56,7 @@ export const objetivos = {
         "  test                  Pruebas del arnés y de Mostrador",
         "  sensor:secretos       No hay credenciales en el árbol",
         "  sensor:invariantes    Cada invariante declara un aplicador real",
-        "  sensor:producto       Sin src/ mientras el producto siga pendiente",
+        "  sensor:producto       El alcance describe Mostrador",
         "  sensor:dinero         En src/ no hay decimales, parseFloat ni toFixed",
         "  check                 Corre lint, tipos, sensores y pruebas",
         "  start                 Levanta el servidor y el front (PORT, MOSTRADOR_SEMILLA)",
