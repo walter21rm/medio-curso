@@ -1,7 +1,14 @@
 # Alcance
 
-PRODUCTO: pendiente
+Mostrador es el mini ERP de una comercializadora con un solo almacén. El mismo producto pasa por el costo, el stock y la deuda, y los tres tienen que cuadrar.
 
-Las dos personas todavía no han dicho qué se va a construir. Este archivo es el lugar de ese acuerdo.
+Está listo cuando una compra recibida actualiza stock y costo promedio, una venta a crédito baja el stock y abre una cuenta por cobrar, un abono baja esa deuda y entra a caja, y el cierre del día deja registrada la diferencia entre el efectivo contado y las ventas de contado más los abonos.
 
-Cuando el producto quede definido, se reemplaza la línea `PRODUCTO: pendiente` por la descripción: qué hace, para quién y cómo se sabe que una entrega está hecha. A partir de ese commit puede aparecer código en `src/`. Mientras la marca siga aquí, `npm run sensor:producto` rechaza cualquier archivo bajo `src/`.
+## Reparto
+
+| Parte | Quién | Ramas | Cierra |
+| --- | --- | --- | --- |
+| A Inventario | La compañera | `feature/catalogo`, `feature/compras`, `feature/kardex` | Productos, recepción, costo promedio y kardex |
+| B Ventas | Esta parte | `feature/ventas`, `feature/cartera`, `feature/caja` | Contado, crédito, anulación, abonos, cobranza y cierre |
+
+Las specs están en [docs/sdd](../sdd/README.md). El esqueleto compartido se revisa entre las dos antes de mergear. Inventario entra primero a `main`.

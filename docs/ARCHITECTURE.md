@@ -1,20 +1,19 @@
 # Arquitectura
 
-Todavía no hay aplicación. Este documento se llena en el mismo cambio que define el producto en [product/ALCANCE.md](product/ALCANCE.md).
-
-Hasta entonces el sistema es el arnés:
+Mostrador guarda el ciclo en memoria y lo prueban los tests. No hay interfaz ni base de datos en este corte. EC2 espera a que el ciclo esté en `main`.
 
 ```mermaid
 flowchart LR
-  personaA[Persona A]
-  personaB[Persona B]
-  agentes[Agentes]
-  repo[Repositorio main]
-  check[npm run check]
-  personaA --> agentes
-  personaB --> agentes
-  agentes --> repo
-  repo --> check
+  mostrador[Mostrador]
+  ventas[Ventas]
+  cartera[Cartera]
+  caja[Caja]
+  inventario[Inventario]
+  mostrador --> ventas
+  mostrador --> cartera
+  mostrador --> caja
+  ventas --> inventario
+  cartera --> caja
 ```
 
-Cada persona habla con su agente. Los agentes leen el mismo repositorio. `npm run check` es la puerta antes del pull request.
+`src/domain` no importa ventas, cartera ni caja. La parte A agrega la recepción de compra sobre `Inventario.reponer` y `actualizarCostoPromedio`, sin reescribir el stock de las ventas.

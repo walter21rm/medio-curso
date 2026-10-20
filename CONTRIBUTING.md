@@ -10,7 +10,8 @@ Dos personas, un repositorio, una rama `main`. El detalle del arnés está en [A
 
 ## Ramas y commits
 
-- Rama: `tipo/asunto-corto`, por ejemplo `docs/alcance-producto`.
+- Rama de la parte A: `feature/catalogo`, `feature/compras`, `feature/kardex`.
+- Rama de la parte B: `feature/ventas`, `feature/cartera`, `feature/caja`.
 - Commits en imperativo. El mensaje cabe en una frase.
 - No se versiona `.env` ni claves de AWS.
 
