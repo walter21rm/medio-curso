@@ -20,10 +20,16 @@ Estas reglas no se negocian dentro de un cambio normal. Modificar este archivo e
 - La lista de cobranza muestra solo cuentas abiertas con vencimiento anterior al día consultado. *Aplicado por: `aún no aplicado`*
 - El cierre guarda la diferencia entre el efectivo contado y las ventas de contado más los abonos, menos los reversos de ese día. *Aplicado por: `aún no aplicado`*
 
-## Parte A, todavía sin su pull request
+## Parte A · Inventario
 
-- El costo promedio se recalcula al recibir una compra, con el redondeo descrito en `docs/sdd/parte-a-inventario.md`. *Aplicado por: `aún no aplicado`*
-- Una compra en borrador no sube el stock. Solo la recepción lo sube. *Aplicado por: `aún no aplicado`*
+Lo cierra la parte A en `src/catalogo`, `src/compras` y `src/kardex`. La parte B no reescribe estos módulos: si necesita otra cosa del inventario, la pide en un pull request de la parte A.
+
+- Cada producto tiene existencia, costo promedio y precio válidos al darse de alta. Un id repetido se rechaza. *Aplicado por: `npm run test`*
+- Una compra en borrador no sube el stock. Solo la recepción lo sube, y una compra recibida no vuelve a recibirse. *Aplicado por: `npm run test`*
+- Un producto va en una sola línea de la compra. *Aplicado por: `npm run test`*
+- El costo promedio se recalcula al recibir una compra, con la existencia de antes de reponer y el redondeo half-up descrito en `docs/sdd/parte-a-inventario.md`. *Aplicado por: `npm run test`*
+- Cada entrada y cada salida de stock queda en el kardex, en orden. *Aplicado por: `npm run test`*
+- `src/catalogo`, `src/compras` y `src/kardex` no hacen I/O. La capa que corra en EC2 los envuelve sin cambiarlos. *Aplicado por: `revisión humana`*
 
 ## Seguridad
 
