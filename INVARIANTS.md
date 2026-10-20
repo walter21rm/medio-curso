@@ -13,12 +13,12 @@ Estas reglas no se negocian dentro de un cambio normal. Modificar este archivo e
 - La existencia no queda negativa. *Aplicado por: `npm run test`*
 - En `src/` no hay literales decimales, `parseFloat` ni `toFixed`. El dinero va en centavos enteros. *Aplicado por: `npm run sensor:dinero`*
 - No se vende más de lo que hay. *Aplicado por: `npm run test`*
-- Una venta al contado baja el stock y entra el total a caja. *Aplicado por: `aún no aplicado`*
-- Una venta a crédito baja el stock y abre una cuenta por cobrar con vencimiento. *Aplicado por: `aún no aplicado`*
-- Anular una venta devuelve el stock. Si era a crédito, cancela la deuda. Si era al contado, revierte el ingreso de caja. *Aplicado por: `aún no aplicado`*
-- Un abono baja el saldo y entra a caja. No supera el saldo. *Aplicado por: `aún no aplicado`*
-- La lista de cobranza muestra solo cuentas abiertas con vencimiento anterior al día consultado. *Aplicado por: `aún no aplicado`*
-- El cierre guarda la diferencia entre el efectivo contado y las ventas de contado más los abonos, menos los reversos de ese día. *Aplicado por: `aún no aplicado`*
+- Una venta al contado baja el stock y entra el total a caja. *Aplicado por: `npm run test`*
+- Una venta a crédito baja el stock y abre una cuenta por cobrar con vencimiento. *Aplicado por: `npm run test`*
+- Anular una venta devuelve el stock. Si era a crédito, cancela la deuda. Si era al contado, revierte el ingreso de caja. *Aplicado por: `npm run test`*
+- Un abono baja el saldo y entra a caja. No supera el saldo. *Aplicado por: `npm run test`*
+- La lista de cobranza muestra solo cuentas abiertas con vencimiento anterior al día consultado. *Aplicado por: `npm run test`*
+- El cierre guarda la diferencia entre el efectivo contado y las ventas de contado más los abonos, menos los reversos de ese día. *Aplicado por: `npm run test`*
 
 ## Parte A · Inventario
 
