@@ -1,0 +1,20 @@
+{
+  "name": "medio-curso",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Repositorio compartido del medio curso. El producto se define después.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "help": "node scripts/arnes.mjs help",
+    "lint": "node scripts/arnes.mjs lint",
+    "test": "node scripts/arnes.mjs test",
+    "sensor:secretos": "node scripts/arnes.mjs sensor:secretos",
+    "sensor:invariantes": "node scripts/arnes.mjs sensor:invariantes",
+    "sensor:producto": "node scripts/arnes.mjs sensor:producto",
+    "check": "node scripts/arnes.mjs check",
+    "clean": "node scripts/arnes.mjs clean"
+  }
+}
